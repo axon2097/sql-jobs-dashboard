@@ -1,1 +1,136 @@
-[]
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Remote SQL Jobs — Dashboard</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 1100px; margin: 0 auto; padding: 1rem; background: #f8f9fa; }
+    h1 { color: #2c3e50; }
+    .filters { display:flex; gap:1rem; margin-bottom:1rem; flex-wrap:wrap; }
+    select { padding: .4rem .8rem; border-radius:6px; border:1px solid #ddd; font-size:.9rem; }
+    table { width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+    th { background:#2c3e50; color:#fff; padding:.7rem 1rem; text-align:left; font-size:.85rem; }
+    td { padding:.65rem 1rem; border-bottom:1px solid #eee; font-size:.9rem; }
+    tr:hover { background:#f0f4ff; }
+    a { color:#3498db; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .count { color:#666; font-size:.9rem; margin-bottom:.5rem; }
+  </style>
+</head>
+<body>
+  <h1>🔍 Remote SQL Jobs</h1>
+  <p class="count">Celkom ponúk: <strong>10</strong> | Aktualizované: 2026-06-04</p>
+  <div class="filters">
+    <select id="filterPortal" onchange="filterTable()">
+      <option value="">Všetky portály</option>
+      <option>Profesia.sk</option>
+      <option>8h.sk</option>
+      <option>Arc.dev</option>
+      <option>Working Nomads</option>
+    </select>
+    <select id="filterContract" onchange="filterTable()">
+      <option value="">Všetky typy zmluvy</option>
+      <option value="živnosť/s.r.o.">živnosť/s.r.o.</option>
+      <option value="neuvedené">neuvedené</option>
+    </select>
+  </div>
+  <table id="jobTable">
+    <thead>
+      <tr><th>Pozícia</th><th>Firma</th><th>Portál</th><th>Zmluva</th><th>Mzda</th><th>Nájdené</th></tr>
+    </thead>
+    <tbody>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/details/full-stack-developer-pt-latam-na-ou2u5xxsba" target="_blank">Full Stack Developer - PT - LATAM/NA</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/details/ai-native-full-stack-engineer-python-django-react-ww-overlap-with-pst-us-ou1ys1icl2" target="_blank">AI-Native Full Stack Engineer (Python/Django &amp; React) - WW - Overlap with PST-US</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/details/data-engineer-oswece4evt" target="_blank">Data Engineer</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/details/applied-ai-engineer-us-pt-osiav6eeep" target="_blank">Applied AI Engineer US-PT</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/details/full-stack-developer-laravel-vue-js-perm-latam-or0v2a35v1" target="_blank">Full Stack Developer (Laravel + Vue.js) - Perm - LATAM</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/details/senior-software-engineer-agentic-ai-fulltime-eastern-eu-odxxnxdtjd" target="_blank">Senior Software Engineer (Agentic AI) - Fulltime - Eastern EU</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/j/everly-senior-analytics-engineer-ouas0fq3hf" target="_blank">Senior Analytics Engineer</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/j/hanger-inc-software-engineer-v-oj3jn8y5ej" target="_blank">Software Engineer V</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/j/toast-product-marketing-manager-back-office-ouazlvj4jb" target="_blank">Product Marketing Manager, Back Office</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr>
+        <tr data-portal="Arc.dev" data-contract="živnosť/s.r.o.">
+          <td><a href="https://arc.dev/remote-jobs/j/jobs-via-dice-tech-lead-java-databricks-w2-only-ouas5bnwh7" target="_blank">Tech Lead (Java, Databricks) - W2 only</a></td>
+          <td></td>
+          <td>Arc.dev</td>
+          <td><span style="color:#2ecc71;font-weight:bold">✓ živnosť/s.r.o.</span></td>
+          <td>neuvedené</td>
+          <td>2026-06-04</td>
+        </tr></tbody>
+  </table>
+  <script>
+    function filterTable() {
+      const portal = document.getElementById('filterPortal').value;
+      const contract = document.getElementById('filterContract').value;
+      document.querySelectorAll('#jobTable tbody tr[data-portal]').forEach(row => {
+        const pMatch = !portal || row.dataset.portal === portal;
+        const cMatch = !contract || row.dataset.contract === contract;
+        row.style.display = (pMatch && cMatch) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
